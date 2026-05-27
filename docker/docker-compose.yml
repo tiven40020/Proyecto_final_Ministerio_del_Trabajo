@@ -2,7 +2,7 @@ version: '3.8'
 
 # ============================================================
 #  docker-compose.yml — Ministerio del Trabajo
-#  Orquestación de servicios institucionales
+#  Orquestación de servicios
 # ============================================================
 
 networks:

@@ -7,7 +7,7 @@ La topología fue implementada en **Cisco Packet Tracer** con:
 - 1 Switch multicapa con 2 VLANs
 - 5 servidores distribuidos en 2 segmentos
 
-> 📎 El archivo `.pkt` de Packet Tracer se adjunta por separado en la entrega.
+> 📎 El archivo `.pkt` de Packet Tracer se encuentra en la carpeta `diseño de red`.
 
 ---
 

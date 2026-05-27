@@ -1,5 +1,5 @@
 #  Bitácora — Proyecto Final Infraestructura TI
-## Ministerio del Trabajo | Maycol Cárdenas Acevedo
+## Ministerio del Trabajo 
 
 ---
 

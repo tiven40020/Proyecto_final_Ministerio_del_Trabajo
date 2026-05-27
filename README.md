@@ -45,9 +45,9 @@ mintrabajo-infra/
 
 ## 🏗️ Arquitectura
 
-| Segmento | VLAN | Red | Descripción |
-|----------|------|-----|-------------|
-| DMZ | VLAN 10 | 192.168.10.0/24 | Servicios públicos (Web, NTP) |
+| Segmento | VLAN | Red | Descripción                              |
+|----------|------|-----|------------------------------------------|
+| DMZ | VLAN 10 | 192.168.10.0/24 | Servicios públicos (Web, NTP)            |
 | Red Interna | VLAN 20 | 192.168.20.0/24 | Servicios críticos (DB, Archivos, Admin) |
 
 ### Servidores
@@ -91,7 +91,11 @@ sudo docker-compose ps
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
-**Maycol Cárdenas Acevedo**  
+**Andres Felipe Ortega**  
+**Steven Contreras Lozano**  
+**Melissa Restrepo Hurtado**  
+**Alfonso Ocampo Montealegre** 
+
 Proyecto Final — Administración de Infraestructura TI
