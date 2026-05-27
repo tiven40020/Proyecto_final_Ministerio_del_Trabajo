@@ -8,6 +8,8 @@ Proyecto final de **Administración de Infraestructura TI**. Diseño e implement
 
 ```
 mintrabajo-infra/
+├── diseño de red/               # Diagrama Cisco Package Tracer
+│   ├── Red-mintrabajo V2.pkt
 ├── docs/                        # Documentación técnica
 │   ├── arquitectura.md
 │   ├── direccionamiento-ip.md
@@ -36,6 +38,7 @@ mintrabajo-infra/
 │   └── ufw-rules.md
 └── monitoring/                  # Logs y monitoreo
     └── herramientas.md
+    
 ```
 
 ---
