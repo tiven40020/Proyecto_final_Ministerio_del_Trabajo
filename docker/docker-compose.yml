@@ -1,0 +1,99 @@
+version: '3.8'
+
+# ============================================================
+#  docker-compose.yml — Ministerio del Trabajo
+#  Orquestación de servicios institucionales
+# ============================================================
+
+networks:
+  mintrabajo-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+
+services:
+
+  # ----------------------------------------------------------
+  #  1. Servidor Web — Apache + PHP + mysqli
+  # ----------------------------------------------------------
+  web-apache:
+    build:
+      context: ../services/web-apache
+      dockerfile: Dockerfile
+    container_name: web-apache
+    ports:
+      - "80:80"
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+    networks:
+      - mintrabajo-net
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ----------------------------------------------------------
+  #  2. Base de Datos — MySQL
+  # ----------------------------------------------------------
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE:      mintrabajo_db
+      MYSQL_USER:          mintrabajo
+      MYSQL_PASSWORD:      mintrabajo123
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ../services/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - mintrabajo-net
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "mintrabajo", "-pmintrabajo123"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # ----------------------------------------------------------
+  #  3. Servidor NTP — Chrony
+  # ----------------------------------------------------------
+  ntp-chrony:
+    build:
+      context: ../services/ntp
+      dockerfile: Dockerfile
+    container_name: ntp-chrony
+    ports:
+      - "123:123/udp"
+    networks:
+      - mintrabajo-net
+    restart: always
+    cap_add:
+      - SYS_TIME
+
+  # ----------------------------------------------------------
+  #  4. Servidor de Archivos — Samba
+  # ----------------------------------------------------------
+  file-server:
+    image: dperson/samba
+    container_name: file-server
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - ../services/files/compartido:/compartido
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+    command: >
+      -u "mintrabajo;mintrabajo123"
+      -s "compartido;/compartido;yes;no;no;mintrabajo"
+    networks:
+      - mintrabajo-net
+    restart: always

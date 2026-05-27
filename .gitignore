@@ -1,0 +1,26 @@
+# Contraseñas y archivos sensibles
+*.env
+.env*
+secrets/
+
+# Respaldos generados
+backups/
+*.tar.gz
+*.sql.gz
+
+# Logs
+*.log
+logs/
+
+# Docker volumes locales
+mysql-data/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Archivos temporales de Python/Node
+__pycache__/
+node_modules/

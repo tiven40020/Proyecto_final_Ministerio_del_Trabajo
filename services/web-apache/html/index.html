@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministerio del Trabajo — Portal Ciudadano</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        header h1 { font-size: 1.5rem; }
+        header p  { font-size: 0.85rem; opacity: 0.8; }
+        nav {
+            background: #0055a5;
+            padding: 10px 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-size: 0.9rem;
+        }
+        nav a:hover { text-decoration: underline; }
+        .hero {
+            background: linear-gradient(135deg, #003366, #0055a5);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h2 { font-size: 2rem; margin-bottom: 10px; }
+        .hero p  { font-size: 1.1rem; opacity: 0.9; }
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #0055a5;
+        }
+        .card .icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .card h3   { font-size: 1rem; color: #003366; margin-bottom: 8px; }
+        .card p    { font-size: 0.82rem; color: #666; }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>🏛️ Ministerio del Trabajo</h1>
+        <p>República de Colombia — Portal Ciudadano</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">PQRS</a>
+    <a href="#">Trámites</a>
+    <a href="#">Normatividad</a>
+    <a href="#">Contáctenos</a>
+</nav>
+
+<div class="hero">
+    <h2>Bienvenido al Portal Institucional</h2>
+    <p>Servicios digitales para trabajadores y empleadores de Colombia</p>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <div class="icon">📋</div>
+        <h3>Radicar PQRS</h3>
+        <p>Peticiones, quejas, reclamos y sugerencias ciudadanas</p>
+    </div>
+    <div class="card">
+        <div class="icon">🔍</div>
+        <h3>Consultar Trámites</h3>
+        <p>Estado de solicitudes y procesos en curso</p>
+    </div>
+    <div class="card">
+        <div class="icon">📜</div>
+        <h3>Normatividad</h3>
+        <p>Decretos, resoluciones y circulares laborales</p>
+    </div>
+    <div class="card">
+        <div class="icon">💼</div>
+        <h3>Empleo</h3>
+        <p>Bolsa de empleo y programas de empleabilidad</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Ministerio del Trabajo — República de Colombia | Infraestructura TI — Proyecto Final</p>
+</footer>
+
+</body>
+</html>
